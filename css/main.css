@@ -94,21 +94,40 @@ textarea {
   --theme-dark-2: #006c88;
   --theme-dark-3: #2f4858;
   --theme-dark-4: #011828;
-
   --theme-font-default: #222;
+  --translucent-black: rgba(0, 0, 0, 0.5);
+  --button-background: rgba(43, 255, 54, 0.85);
+
+  --header-nav-font-color: #fff;
+
   --footer-font-default-color: #fff;
   --footer-font-accent-color: var(--theme-primary);
   --footer-background-color: var(--theme-dark-4);
 
-  --home-hero-banner: url("");
+  --home-hero-banner: url("../img/banner-about-us.png");
 }
 * {
   transition: color linear 0.25s, background-color linear 0.25s,
     margin linear 0.25s;
 }
 ::selection {
-  background: #fff;
-  color: var(--theme-dark-4);
+  background: rgba(0, 186, 160, 0.15);
+  color: #fff;
+}
+
+@font-face {
+  font-family: "Lucida Grande";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Lucida Grande"),
+    url("https://fonts.cdnfonts.com/s/38053/LUCIDAG.woff") format("woff");
+}
+@font-face {
+  font-family: "Lucida Grande";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Lucida Grande"),
+    url("https://fonts.cdnfonts.com/s/38053/LUCIDAGB.woff") format("woff");
 }
 
 h1,
@@ -157,13 +176,11 @@ header > section.logo-container {
 }
 
 header .logo {
-  background-color: var(--theme-dark-3);
   display: inline-block;
   width: 112px;
   height: 64px;
   overflow: hidden;
-  padding: 8px 16px;
-  border-radius: 0 0 8px 8px;
+  margin-top: 1em;
 }
 
 header .logo img {
@@ -176,13 +193,22 @@ header nav {
   font-size: 14px;
   line-height: 1em;
   text-align: right;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+header nav.wrapped {
+  background-color: var(--translucent-black);
+  padding: 1em 1.25em;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 0.75em;
 }
 
 header nav a {
   margin-right: 1rem;
-  color: var(--theme-font-default);
+  color: var(--header-nav-font-color);
   text-decoration: none;
+  font-weight: 600;
 }
 
 header nav a:hover {
@@ -198,7 +224,7 @@ header > nav {
 }
 
 main {
-  min-height: 50vh;
+  min-height: 10vh;
 }
 
 footer {
@@ -218,7 +244,7 @@ footer a:hover {
 main,
 footer .container {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1440px;
 }
 
 footer .container {
@@ -290,17 +316,35 @@ footer .logo {
   bottom: 0;
   z-index: -1;
 }
+
+.banner-content {
+  font-size: 32px;
+  padding: 0 4em;
+  line-height: 1;
+  color: #fff;
+}
+.banner-content .button {
+  font-size: 20px;
+  color: #fff;
+}
+.banner-content .right {
+  text-align: right;
+}
+
 .banner-content h1 {
-  margin-top: 35vh;
+  font-weight: 700;
+  margin: 50vh 0 0;
 }
 
 .button {
+  box-sizing: border-box;
   display: inline-block;
   padding: 0.75em 1.5em;
-  background: var(--theme-primary);
+  background: var(--button-background);
   border-radius: 0.5em;
   color: var(--theme-dark-4);
 }
+
 .button:hover {
   background-color: var(--theme-primary-2);
 }
